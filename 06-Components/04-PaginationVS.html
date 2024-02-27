@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pagination Challenge</title>
+  </head>
+
+  <style>
+    /*  SPACING SYSTEM (px)
+            2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+            FONT SIZE SYSTEM (px)
+            10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+            MAIN COLOR:  #087f5b
+            GREY COLOR:  #343a40
+             */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ------------------------ */
+    /* GENERAL STYLES */
+    /* ------------------------ */
+    body {
+      font-family: "Inter", sans-serif;
+      color: #343a40;
+      line-height: 1;
+      /* <-- Center items on viewport --> */
+      display: flex;
+      /* align-items: center; */
+      justify-content: center;
+      /*height: 100vh; (100vs = 1080px) */
+    }
+
+    .pagination {
+      margin-top: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .btn {
+      background-color: #fff;
+      border: 1px solid #087f5b;
+      border-radius: 100%;
+      padding: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn:hover {
+      background-color: #087f5b;
+    }
+
+    .btn:hover .btn-icon {
+      stroke: #fff;
+    }
+
+    .btn-icon {
+      height: 24px;
+      width: 24px;
+      stroke: #087f5b;
+      stroke-width: 2;
+    }
+
+    .pages {
+      display: flex;
+      gap: 12px;
+    }
+
+    .page-numbers:nth-child(3) {
+      background-color: #087f5b;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 100%;
+    }
+
+    .page-numbers {
+      text-decoration: none;
+      color: #343a40;
+      font-size: 18px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: transparent;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .page-numbers:hover,
+    .page-numbers:active {
+      background-color: #087f5b;
+      color: #fff;
+    }
+
+    .dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+
+  <body>
+    <div class="pagination">
+      <button class="btn btn--left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="btn-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </svg>
+      </button>
+      <div class="pages">
+        <a class="page-numbers" href="#">1</a>
+        <a class="page-numbers" href="#">2</a>
+        <a class="page-numbers" href="#">3</a>
+        <a class="page-numbers" href="#">4</a>
+        <a class="page-numbers" href="#">5</a>
+        <a class="page-numbers" href="#">6</a>
+        <span class="dots">...</span>
+        <a class="page-numbers" href="#">23</a>
+      </div>
+      <button class="btn btn--right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="btn-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </button>
+    </div>
+  </body>
+</html>

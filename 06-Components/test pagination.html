@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .prev-page,
+      .next-page {
+        background-color: #f2f2f2;
+        border: none;
+        border-radius: 50%; /* Make buttons round */
+        height: 48px;
+        width: 48px;
+        padding: 0; /* Remove padding for round buttons */
+        cursor: pointer;
+        text-align: center; /* Center arrow icons */
+      }
+
+      .prev-page::before,
+      .next-page::after {
+        font-family: "Font Awesome 5 Free"; /* Assuming Font Awesome is included */
+        font-weight: 900;
+        content: "\f060"; /* Left arrow for prev button */
+      }
+
+      .next-page::after {
+        content: "\f061"; /* Right arrow for next button */
+      }
+
+      .page-numbers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .page-numbers li {
+        display: inline-block;
+        margin: 0 5px;
+      }
+
+      .page-numbers li a {
+        text-decoration: none;
+        color: #333;
+        padding: 10px 15px;
+        font-size: 18px; /* Set number font size */
+      }
+
+      .page-numbers li a:hover {
+        background-color: green;
+        color: #fff;
+      }
+
+      .page-numbers li.active a {
+        background-color: #007bff;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pagination">
+      <button class="prev-page">❮</button>
+      <ul class="page-numbers"></ul>
+      <button class="next-page">❯</button>
+    </div>
+
+    <script>
+      const paginationContainer = document.querySelector(".pagination");
+      const pageNumbersList = document.querySelector(".page-numbers");
+
+      const totalPages = 23;
+      const currentPage = 1; // Adjust this to the current page number
+
+      const createPageButtons = () => {
+        pageNumbersList.innerHTML = ""; // Clear existing page numbers
+
+        if (totalPages <= 7) {
+          // Show all page numbers if total pages are less than or equal to 7
+          for (let i = 1; i <= totalPages; i++) {
+            const pageButton = createPageButton(i);
+            pageNumbersList.appendChild(pageButton);
+          }
+        } else {
+          // Show 1, 2, 3, ... 6, 23
+          const firstPages = [1, 2, 3];
+          const lastPages = [21, 22, 23];
+
+          firstPages.forEach((pageNumber) => {
+            const pageButton = createPageButton(pageNumber);
+            pageNumbersList.appendChild(pageButton);
+          });
+
+          const ellipsis = document.createElement("li");
+          ellipsis.classList.add("ellipsis");
+          ellipsis.textContent = "...";
+          pageNumbersList.appendChild(ellipsis);
+
+          lastPages.forEach((pageNumber) => {
+            const pageButton = createPageButton(pageNumber);
+            pageNumbersList.appendChild(pageButton);
+          });
+        }
+      };
+
+      const createPageButton = (pageNumber) => {
+        const pageButton = document.createElement("li");
+        const pageLink = document.createElement("a");
+        pageLink.href = `#page${pageNumber}`; // Adjust the link URL as needed
+        pageLink.textContent = pageNumber;
+
+        if (pageNumber === currentPage) {
+          pageButton.classList.add("active");
+        }
+
+        pageButton.appendChild(pageLink);
+        return pageButton;
+      };
+
+      createPageButtons();
+
+      paginationContainer.addEventListener("click", (event) => {
+        const target = event.target;
+
+        if (target.classList.contains("prev-page")) {
+          // Handle previous page button click
+        } else if (target.classList.contains("next-page")) {
+          // Handle next page button click
+        } else if (target.classList.contains("page-numbers")) {
+          // Handle page number click
+        }
+
+        createPageButtons(); // Update page buttons after interaction
+      });
+    </script>
+  </body>
+</html>

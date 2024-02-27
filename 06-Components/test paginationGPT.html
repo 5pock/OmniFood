@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .pagination {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+      }
+
+      .pagination-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      .pagination-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .pagination-item:hover,
+      .pagination-arrow:hover {
+        background-color: green;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul class="pagination" id="pagination">
+        <li class="pagination-arrow" onclick="prevPage()">&#9666;</li>
+        <li class="pagination-item" onclick="changePage(1)">1</li>
+        <li class="pagination-item" onclick="changePage(2)">2</li>
+        <li class="pagination-item" onclick="changePage(3)">3</li>
+        <li class="pagination-item" onclick="changePage(6)">6</li>
+        <li class="pagination-item" onclick="changePage(23)">23</li>
+        <li class="pagination-arrow" onclick="nextPage()">&#9656;</li>
+      </ul>
+    </div>
+
+    <script>
+      function changePage(page) {
+        // Implement logic to handle page change
+        console.log(`Page changed to ${page}`);
+      }
+
+      function prevPage() {
+        // Implement logic for previous page
+        console.log("Previous page");
+      }
+
+      function nextPage() {
+        // Implement logic for next page
+        console.log("Next page");
+      }
+    </script>
+  </body>
+</html>

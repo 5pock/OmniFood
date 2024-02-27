@@ -1,0 +1,45 @@
+{
+  "folders": [
+	{
+		"name": "duolingo",
+		"path": "../duolingo"
+	},
+	{
+		"name": "01-Test",
+		"path": "../01-Test"
+	},
+	{
+		"name": "02-HTML-Fundamentals",
+		"path": "../02-HTML-Fundamentals"
+	},
+	{
+		"name": "03-CSS-Fundamentals",
+		"path": "../03-CSS-Fundamentals"
+	},
+	{
+		"name": "04-CSS-Layouts",
+		"path": "../04-CSS-Layouts"
+	},
+	{
+		"name": "05-Design",
+		"path": "../05-Design"
+	},
+	{
+		"name": "06-Components",
+		"path": "../06-Components"
+	},
+	{
+		"name": "07-Omnifood-Desktop",
+		"path": "../07-Omnifood-Desktop"
+	},
+	{
+		"path": "../08-Omnifood-Responsive"
+	},
+	{
+		"path": "."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "09-Omnifood-Optimization"
+  }
+}
